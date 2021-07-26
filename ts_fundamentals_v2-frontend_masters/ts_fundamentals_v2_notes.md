@@ -30,7 +30,7 @@
 -   How can we configure typescript?
 -   How do you define files as input?
 -   Where do you put the configuration for the compiler?
--   How would you provide information about types
+-   How would you provide information about types after compliation?
 -   What is a .d.ts file?
 -   What is a js.map file?
 -   Is strict as true a good idea? Why?
@@ -60,5 +60,63 @@ const b = "Tony";
 ```ts
 const myObj = {
     a: "Bob",
+};
+```
+
+-   What is the following type declaration? What can it hold?
+-   Should `any` be completely avoided?
+
+```ts
+let x: any;
+```
+
+-   What is ts's top type?
+
+### Arrays
+
+-   What is ts's bottom type?
+-   What is the type of the following?
+
+```ts
+const ar = [];
+```
+
+-   How could we make it an array that accepts, strings only?
+-   There are two ways to specify the type for above array of strings. What are they?
+-   How could we make it an array that accepts strings or numbers?
+-   How could we make it an array that accepts any value?
+
+### Objects
+
+-   What three ways could you use to declare the types for the following object
+
+```ts
+const person = {
+    firstName: "Hobbit",
+    lastName: "Troll",
+    age: 56,
+};
+```
+
+-   Are types and interfaces for objects largley interchangeable?
+-   Are properties required?
+-   How would you make a property optional?
+-   With a property being optional, how would you avoid a ts error in the following code?
+
+```ts
+interface IPerson {
+    firstName?: string;
+    lastName: string;
+}
+
+function personToLower(person: IPerson): IPerson {
+    const personCpy = { ...person };
+    personCpy.firstName.toLowerCase(); // this will throw an error as first name is possibly null
+    personCpy.lastName.toLowerCase();
+    return personCpy;
+}
+const person = {
+    firstName: "Hobbit",
+    lastName: "Troll",
 };
 ```
