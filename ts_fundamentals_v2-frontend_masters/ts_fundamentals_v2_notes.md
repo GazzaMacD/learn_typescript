@@ -120,3 +120,43 @@ const person = {
     lastName: "Troll",
 };
 ```
+
+### Intersection Types
+
+-   How would one make an intersection type between these two types below?
+
+```ts
+type TDog = {
+    name: string;
+    furType: string;
+};
+type TFish = {
+    name: string;
+    freshWater: boolean;
+};
+```
+
+-   In the above, if you made and intersection type, say TPet, which property would be accesible? Which properties would not be accesible? Why?
+-   How would one make a Union type of the following types?
+
+```ts
+type TDog = {
+    name: string;
+    furType: string;
+};
+type TCat = {
+    name: string;
+    species: string;
+    hasVet: boolean;
+};
+```
+
+-   If you make a union type of the above two types, do the objects using this type need all properties of the union type?
+-   What are those properties?
+
+### Type Systems and Type equivalence
+
+-   Are the type systems of Java and TypeScript the same?
+-   What are the two type systems used by these two languages and can you explain the differences between the two?
+-   What is the concept of wider and narrower in Typescript?
+-   Can you give 6 concrete examples of the range of widest to narrowest?
