@@ -160,3 +160,27 @@ type TCat = {
 -   What are the two type systems used by these two languages and can you explain the differences between the two?
 -   What is the concept of wider and narrower in Typescript?
 -   Can you give 6 concrete examples of the range of widest to narrowest?
+
+### Functions
+
+-   How would you give the function below, type annotations
+
+```js
+const john = {
+    name: "John",
+    email: "john@yahoo.co.jp",
+};
+function createLoanEmail(to) {
+    return {
+        recipient: `${to.name} <${to.email}`,
+        body: `Dear ${to.name}, \nYou are qualified for a loan! Please contact us at spam@load.co.jp.`,
+    };
+}
+
+send(sendLoadEmail(john));
+```
+
+-   How would you do the arrow function equivalent in TS of the above
+-   Can return types be inferred?
+-   Why does Mike suggest that creating type annotations for the return type might be preferable?
+-   rest params would be annotated how?
