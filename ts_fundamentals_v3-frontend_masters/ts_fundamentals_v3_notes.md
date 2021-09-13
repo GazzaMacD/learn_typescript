@@ -37,7 +37,7 @@
 -   What is an implicit 'any'? Should we allow it?
 -   Is it possible to check .js files?
 
-### variables
+### Variables
 
 -   Is it a good idea to type every type on every variable? If not, why not?
 -   What will happen in ts with the following code? Where is the ts error?
@@ -86,6 +86,12 @@ const ar = [];
 -   How could we make it an array that accepts strings or numbers?
 -   How could we make it an array that accepts any value?
 
+### Tuples
+
+-   Do we need to state the type of a tuple explicilty
+-   How would you state the type for the following `let car = ["Honda", 2002, "CRV"]`?
+-   IMPORTANT, can you use push, pop to this 'tupple' in TS or will it warn you against it?
+
 ### Objects
 
 -   What three ways could you use to declare the types for the following object
@@ -98,7 +104,53 @@ const person = {
 };
 ```
 
+### Union Types
+
+-   Would you relate union types to AND or OR operators?
+-   Could you draw two circles to show a Union Type in set theory?
+-   What operator would you use to create a union type in TS?
+-   Which of these t
+
+### Intersection Types
+
+-   Would you relate union types to AND or OR operators?
+-   Could you draw two circles to show a Intersection Type in set theory?
+-   How would one make an intersection type between these two types below?
+-   Which of the two types, Union or Intersection are more common?
+
+```ts
+type TDog = {
+    name: string;
+    furType: string;
+};
+type TFish = {
+    name: string;
+    freshWater: boolean;
+};
+```
+
+-   In the above, if you made an intersection type, say TPet, which property would be accesible? Which properties would not be accesible? Why?
+-   How would one make a Union type of the following types?
+
+```ts
+type TDog = {
+    name: string;
+    furType: string;
+};
+type TCat = {
+    name: string;
+    species: string;
+    hasVet: boolean;
+};
+```
+
+-   If you make a union type of the above two types, do the objects using this type need all properties of the union type?
+-   What are those properties?
+
+### Type Aliases and Interfaces
+
 -   Are types and interfaces for objects largley interchangeable?
+-   In terms of namespacing, which of type aliases or interfaces, can have two of the same name? (althouth let's be honest, it's a bad idea)
 -   Are properties required?
 -   How would you make a property optional?
 -   With a property being optional, how would you avoid a ts error in the following code?
@@ -121,41 +173,19 @@ const person = {
 };
 ```
 
-### Intersection Types
-
--   How would one make an intersection type between these two types below?
-
-```ts
-type TDog = {
-    name: string;
-    furType: string;
-};
-type TFish = {
-    name: string;
-    freshWater: boolean;
-};
-```
-
--   In the above, if you made and intersection type, say TPet, which property would be accesible? Which properties would not be accesible? Why?
--   How would one make a Union type of the following types?
-
-```ts
-type TDog = {
-    name: string;
-    furType: string;
-};
-type TCat = {
-    name: string;
-    species: string;
-    hasVet: boolean;
-};
-```
-
--   If you make a union type of the above two types, do the objects using this type need all properties of the union type?
--   What are those properties?
+-   What is an 'excess property error'?
+-   If you had two types, say `MyCar` and `MyTrailer` and you wanted to make a special car, trailer combination, how could you achieve this in code to produce the type `MyCarWithTrailer`?
+-   Is this a little similar to the `extends` keyword with classes in Javascript?
+-   Can you explain how to use the `implements` keyword with classes and interfaces?
+-   What is augmenting an interface?
+-   Can you give an example in code of augmenting an interface?
+-   Can you augment a type alias in the same way as an interface?
+-   If you augment an interface, where is that augmentation available? Across the app? Only below the augmentation? Local only?
+-   When is augmenting an interface useful?
 
 ### Type Systems and Type equivalence
 
+-   Is Typescript static or dynamic?
 -   Are the type systems of Java and TypeScript the same?
 -   What are the two type systems used by these two languages and can you explain the differences between the two?
 -   What is the concept of wider and narrower in Typescript?
@@ -184,3 +214,5 @@ send(sendLoadEmail(john));
 -   Can return types be inferred?
 -   Why does Mike suggest that creating type annotations for the return type might be preferable?
 -   rest params would be annotated how?
+-   Is TS a replacement for unit tests?
+-
