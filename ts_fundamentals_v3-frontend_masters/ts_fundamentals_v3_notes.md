@@ -215,4 +215,8 @@ send(sendLoadEmail(john));
 -   Why does Mike suggest that creating type annotations for the return type might be preferable?
 -   rest params would be annotated how?
 -   Is TS a replacement for unit tests?
--
+-   If the function return type is unimportant and should be ignored, what is the return type that should be used?
+-   Are `undefined` and `void` the same as return types? Explain!
+-   What is function overloading?
+-   Is function overloading possible in Javascript?
+-   Can we write overload signatures in Typescript?
